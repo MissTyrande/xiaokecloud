@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoke.springcloud.dao.PaymentDao">
+    <resultMap id="resultMap" type="com.xiaoke.springcloud.entities.Payment">
+        <result column="id" property="id"/>
+        <result column="user" property="user"/>
+        <result column="desc" property="desc"/>
+    </resultMap>
+
+    <select id="getPaymentById"
+            parameterType="Integer"
+            resultType="com.xiaoke.springcloud.entities.Payment"
+    >
+    select * from payment where id = #{id}
+    </select>
+
+    <insert id="create" parameterType="com.xiaoke.springcloud.entities.Payment">
+        insert into payment (id,`user`, `desc`) values (
+            #{payment.id},
+            #{payment.user},
+            #{payment.desc}
+        )
+    </insert>
+
+</mapper>

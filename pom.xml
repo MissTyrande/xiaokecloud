@@ -7,6 +7,12 @@
     <groupId>com.xiaoke.springcloud</groupId>
     <artifactId>xiaokecloud</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>cloud-provider-payment8001</module>
+        <module>cloud-comsumer-order80</module>
+        <module>cloud-api-commons</module>
+        <module>cloud-provider-payment8002</module>
+    </modules>
     <packaging>pom</packaging>
 
     <properties>
@@ -14,7 +20,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <junit.version>4.12</junit.version>
-        <log4j.version>1.2.17</log4j.version>
+        <log4j.version>1.7.21</log4j.version>
         <lombok.version>1.16.18</lombok.version>
         <mysql.version>5.1.47</mysql.version>
         <druid.version>1.1.16</druid.version>
@@ -70,8 +76,13 @@
                 <version>${junit.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j</artifactId>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
                 <version>${log4j.version}</version>
             </dependency>
         </dependencies>
